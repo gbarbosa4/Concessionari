@@ -1,0 +1,26 @@
+* {margin:0;padding:0}
+.inner_copy {border:0;color:#f00;float:left;width:50% !important;margin:-100% 0 0 0;overflow:hidden;line-height:0;padding:0;font-size:11px}
+.fleft {float:left}
+.fright  {float:right}
+.fcenter {float:none;margin:0 auto;width:96%}
+.fclear {clear:both}
+body {background:#000 url(../images/1.jpg) left top no-repeat;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#000}
+.container {width:900px}
+.logo {margin-left:523px;margin-top:10px}
+.logo h1 {color:#fff;font-size:18px}
+.logo h3 {color:#fff;font-size:12px}
+.menu {margin-left:523px;padding:30px 0 5px 0}
+.menu ul {margin:0;padding:0}
+.menu li {list-style:none;display:inline;margin:0 10px}
+.menu li a {color:#fff;text-decoration:none}
+.menu li a:hover {color:#9C3632;text-decoration:none}
+.bodyContent {width:335px;border:6px solid #9C3632;background:#fff;margin-left:523px}
+.bodyContent p {padding:15px}
+.bodyContent h1 {font-size:18px;margin:0;padding:15px 15px 0 15px}
+.bodyContent h3 {font-size:10px;margin:0;padding-left:15px}
+.bodyContent a {color:#9C3632}
+.bodyContent a:hover {color:#9C3632;text-decoration:none}
+#footer {}
+#footer p {color:#fff;font-size:11px;margin:5px}
+#footer p a {color:#fff}
+#footer p a:hover {color:#fff;text-decoration:none}

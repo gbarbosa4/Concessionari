@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>{{ titlehead }}</title>
+    </head>
+
+    <body>
+        <h1>Conessionari</h1>
+        <h3>Menu</h3>
+        <div class="menu">
+		    <ul>
+                <li><a href="/mainpage">HOME</a></li>
+			    <li><a href="/cars_page">Cars</a></li>
+			    <li><a href="/factory_page">Factory</a></li>
+			    <li><a href="/user/">Usuari</a></li>
+			    <li><a href="">Comercial</a></li>
+		    </ul>
+	    </div><div class="inner_copy"></div>
+
+        <h3>Cotxes en stock</h3>
+        {% if cars %}
+        {% for car in cars %}
+        <li> <a href="/cars_page/{{car.id}}"> {{car.brand}} </a></li>
+        
+        {% endfor %}
+        {% else %}
+            <p> No hi ha cap cotxe </p>
+        {% endif %}
+    </body>
+</html>
