@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>{{ username }}</title>
+        <title>{{ user.username }}</title>
     </head>
     <body>
         
@@ -11,17 +11,24 @@
                 <li><a href="/mainpage">HOME</a></li>
 			    <li><a href="/cars_page">Cars</a></li>
 			    <li><a href="/factory_page">Factory</a></li>
-			    <li><a href="/user/">Usuari</a></li>
-			    <li><a href="">Comercial</a></li>
+			    <li><a href="/user">Usuari</a></li>
+			    <li><a href="/comercials_page">Comercials</a></li>
+                <li><a href="/Log_Out">Log_Out</a></li>
 		    </ul>
 	    </div><div class="inner_copy"></div>
 
-        <h3>Info of {{ username }}</h3>
+        <h3>Info of {{ user.user.username }}</h3>
         <ul>
-                <li>Marca: {{ car.brand }}</li>
-			    <li>Model: {{ car.model }}</li>
-                <li>Fabricat en: {{ car.factory.city }} - {{ car.factory.address }}</li>
+                <li>Telefon:</li>
+                <input type="text" value="{{ user.telephone }}"></input>
+			    <li>D.N.I.:</li>
+                <input type="text" value=" {{ user.dni }}"></input>
+                <li>Ciutat:</li>
+                <input type="text" value="{{ user.city }}"></input>
+                <li>Adreça:</li>
+                <input type="text" value="{{ user.address }}"></input>
 	    </ul>
+        <a href="/Log_Out"> Save </a>
         
     </body>
 </html>

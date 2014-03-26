@@ -13,14 +13,17 @@
 		<h1>Concessionari</h1>
 		<h3>Guillem Barbosa, Joan Marc Capell and Denis Casajus</h3>	
 	</div>
-	<div class="menu">
-		<ul>
-			<li><a href="/cars_page">Cars</a></li>
-			<li><a href="/factory_page">Factory</a></li>
-			<li><a href="/user/">Usuari</a></li>
-			<li><a href="">Comercial</a></li>
-		</ul>
-	</div><div class="inner_copy"></div>
+    {% if main==true %}
+	    <div class="menu">
+		    <ul>
+			    <li><a href="/cars_page">Cars</a></li>
+			    <li><a href="/factory_page">Factory</a></li>
+			    <li><a href="/user">Usuari</a></li>
+			    <li><a href="/comercials_page">Comercials</a></li>
+                <li><a href="/Log_Out">Log_Out</a></li>
+		    </ul>
+	    </div><div class="inner_copy"></div>
+    {% endif %}
 	<div class="bodyContent">
 		 <h1>{{ pagetitle }}</h1>
         <p>{{ contentbody }}</p>

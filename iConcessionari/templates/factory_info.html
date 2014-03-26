@@ -17,14 +17,13 @@
 		    </ul>
 	    </div><div class="inner_copy"></div>
 
-        <h3>Info of {{ car.car_id }}</h3>
+        <h3>Info of {{ factory.Factory_id }}</h3>
         <ul>
-                <li>Marca: {{ car.brand }}</li>
-			    <li>Model: {{ car.model }}</li>
-                <li>Fabricat en: {{ car.factory.city }} - {{ car.factory.address }}</li>
-                <li>Preu: {{ car.price }}</li>
-                <li>Comercial: {{ car.comercial.user.first_name }}</li>
-                <li>Fabricat en: {{ car.factory.Factory_id }} - {{ car.factory.city }} - {{ car.factory.address }}</li>
+                <li>Telefon: {{ factory.city }}</li>
+                <li>Adreça: {{ factory.address }}</li>
+			    <li>Telefon: {{ factory.telephone }}</li>
+                <li>Produccio: {{ factory.production }}</li>
+                <li>Stock: {{ factory.stock }}</li>
 	    </ul>
     </body>
 </html>

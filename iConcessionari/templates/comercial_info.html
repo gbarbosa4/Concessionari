@@ -1,9 +1,9 @@
 <html>
     <head>
-        <title>Info of {{ car.car_id }}</title>
+        <title>{{ user.username }}</title>
     </head>
-
     <body>
+        
         <h1>Conessionari</h1>
         <h3>Menu</h3>
         <div class="menu">
@@ -17,14 +17,16 @@
 		    </ul>
 	    </div><div class="inner_copy"></div>
 
-        <h3>Info of {{ car.car_id }}</h3>
+        <h3>Info of {{ user.user.username }}</h3>
         <ul>
-                <li>Marca: {{ car.brand }}</li>
-			    <li>Model: {{ car.model }}</li>
-                <li>Fabricat en: {{ car.factory.city }} - {{ car.factory.address }}</li>
-                <li>Preu: {{ car.price }}</li>
-                <li>Comercial: {{ car.comercial.user.first_name }}</li>
-                <li>Fabricat en: {{ car.factory.Factory_id }} - {{ car.factory.city }} - {{ car.factory.address }}</li>
+                <li>Nom: {{ user.company_id }}</li>
+                <li>ID: {{ user.company_id }}</li>
+                <li>Telefon: {{ user.telephone }}</li>
+			    <li>D.N.I.: {{ user.dni }}</li>
+                <li>Residencia: {{ user.city }} - {{ user.address }}</li>
+                <li>Vendes: {{ user.sells }}</li>
+                
 	    </ul>
+        
     </body>
 </html>

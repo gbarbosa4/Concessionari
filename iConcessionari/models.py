@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 
+
 class Factory(models.Model):
     Factory_id = models.TextField(max_length=100)
     city = models.TextField(max_length=100)
@@ -12,9 +13,10 @@ class Factory(models.Model):
     def __unicode__(self):
         return self.city+" - "+self.address+" - "+str(self.production)+" - "+str(self.stock)
 
-class Comercial(User):
+class Comercial(models.Model):
+    user = models.ForeignKey(User, unique=True)
     company_id = models.TextField(max_length=100)
-    name = models.TextField(max_length=100)
+    #name = models.TextField(max_length=100)
     city = models.TextField(max_length=100)
     address = models.TextField(max_length=100)
     telephone = models.IntegerField()
@@ -22,17 +24,18 @@ class Comercial(User):
     sells = models.IntegerField()
     factory = models.ManyToManyField(Factory)
     def __unicode__(self):
-        return self.name+" - "+self.city+" - "+self.address+" - "+self.dni
+        return self.city+" - "+self.address+" - "+self.dni
 
-class Client(User):
-    name = models.TextField(max_length=100)
+class Client(models.Model):
+    user = models.ForeignKey(User, unique=True)
+    #name = models.TextField(max_length=100)
     city = models.TextField(max_length=100)
     address = models.TextField(max_length=100)
     telephone = models.IntegerField()
     dni = models.TextField(max_length=9)
     comercial = models.ForeignKey(Comercial)
     def __unicode__(self):
-        return self.name+" - "+self.city+" - "+self.address+" - "+self.dni
+        return self.city+" - "+self.address+" - "+self.dni
 
 class Car(models.Model):
     brand = models.TextField(max_length=30)
@@ -44,8 +47,4 @@ class Car(models.Model):
     factory = models.ForeignKey(Factory)
     def __unicode__(self):
         return self.brand+" - "+self.model+" - "+str(self.price)
-
-
-	
-
 
