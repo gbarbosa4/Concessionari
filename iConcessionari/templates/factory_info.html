@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Info of {{ car.car_id }}</title>
+    </head>
+
+    <body>
+        <h1>Conessionari</h1>
+        <h3>Menu</h3>
+        <div class="menu">
+		    <ul>
+                <li><a href="/mainpage">HOME</a></li>
+			    <li><a href="/cars_page">Cars</a></li>
+			    <li><a href="/factory_page">Factory</a></li>
+			    <li><a href="/user">Usuari</a></li>
+			    <li><a href="/comercials_page">Comercials</a></li>
+                <li><a href="/clients_page">Clients</a></li>
+                <li><a href="/Log_Out">Log_Out</a></li>
+		    </ul>
+	    </div><div class="inner_copy"></div>
+
+        <h3>Info of Factory {{ factory.id }}</h3>
+        <ul>
+                <li>Telefon: {{ factory.city }}</li>
+                <li>Adreça: {{ factory.address }}</li>
+			    <li>Telefon: {{ factory.telephone }}</li>
+                <li>Produccio: {{ factory.production }}</li>
+                <li>Stock: {{ factory.stock }}</li>
+	    </ul>
+    </body>
+</html>

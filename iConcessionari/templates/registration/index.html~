@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Concessionari app</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="css/styles.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div class="container">
+	<div class="logo">
+		<h1>Concessionari</h1>
+		<h3>Guillem Barbosa, Joan Marc Capell and Denis Casajus</h3>	
+	</div>
+	<div class="menu">
+		<ul>
+			<li><a href="">HOME</a></li>
+			<li><a href="">ABOUT</a></li>
+			<li><a href="">GALLERY</a></li>
+			<li><a href="">BLOG</a></li>
+			<li><a href="">CONTACT</a></li>
+		</ul>
+	</div><div class="inner_copy"></div>
+	<div class="bodyContent">
+		<h1>Welcome to Website!</h1>
+		<h3>sadadasd </h3>
+		<p>asdfafdsafaf</p>
+		<p>
+		dasfasfdafsadfasfdasfasdfaf
+		</p>
+	</div>
+<div id="footer">
+	<div class="fcenter">
+		
+	</div>
+</div>
+</div>
+</body>
+</html>

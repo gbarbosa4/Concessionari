@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Concessionari app</title>
+</head>
+<body>
+
+	<h1>Concessionari</h1>
+
+	<h2>User Register</h2>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <li>{{userform.username}}</li>
+        <li>{{userform.password}}</li>
+        <li>{{userform.password}}</li>
+        <li>{{userform.first_name}}</li>
+        <li>{{userform.last_name}}</li>
+        <li>{{userform.email}}</li>
+        <li>{{clientprofile}}</li>
+        <input type="hidden" name="next" value="/mainpage" />
+        <input type="submit" value="Save" />
+    </form>
+	
+
+</body>
+</html>
+
+

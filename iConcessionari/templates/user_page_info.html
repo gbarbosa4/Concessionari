@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>{{ user.username }}</title>
+    </head>
+    <body>
+        
+        <h1>Conessionari</h1>
+        <h3>Menu</h3>
+        <div class="menu">
+		    <ul>
+                <li><a href="/mainpage">HOME</a></li>
+			    <li><a href="/cars_page">Cars</a></li>
+			    <li><a href="/factory_page">Factory</a></li>
+			    <li><a href="/user">Usuari</a></li>
+			    <li><a href="/comercials_page">Comercials</a></li>
+                <li><a href="/clients_page">Clients</a></li>
+                <li><a href="/Log_Out">Log_Out</a></li>
+		    </ul>
+	    </div><div class="inner_copy"></div>
+
+        <h3>Info of {{ user.username }}</h3>
+        <li>Nom: {{ user.first_name }}</li>
+        <li>Cognom: {{ user.last_name }}</li>
+        <li>Email: {{ user.email }}</li>
+
+        <a href="/user/edit">Editar perfil</a></li>
+        
+        
+    </body>
+</html>

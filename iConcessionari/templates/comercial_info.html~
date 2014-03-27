@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>{{ user.username }}</title>
+    </head>
+    <body>
+        
+        <h1>Conessionari</h1>
+        <h3>Menu</h3>
+        <div class="menu">
+		    <ul>
+                <li><a href="/mainpage">HOME</a></li>
+			    <li><a href="/cars_page">Cars</a></li>
+			    <li><a href="/factory_page">Factory</a></li>
+			    <li><a href="/user">Usuari</a></li>
+			    <li><a href="/comercials_page">Comercials</a></li>
+                <li><a href="/Log_Out">Log_Out</a></li>
+		    </ul>
+	    </div><div class="inner_copy"></div>
+
+        <h3>Info of {{ user.user.username }}</h3>
+        <ul>
+                <li>Nom: {{ user.company_id }}</li>
+                <li>ID: {{ user.company_id }}</li>
+                <li>Telefon: {{ user.telephone }}</li>
+			    <li>D.N.I.: {{ user.dni }}</li>
+                <li>Residencia: {{ user.city }} - {{ user.address }}</li>
+                <li>Vendes: {{ user.sells }}</li>
+                {% if user.factory %} 
+                <li>Fabriques amb contacte: 
+                    {% for fact in user.factory %}
+                        <ol> <a href="/factory_info/{{fact.Factory_id}}"> {{fact.address}} </a> - ID: {{fact.Factory_id}}- Telephone: {{fact.telephone}} </ol>
+                    {% endfor %}
+                {% endif %}
+                </li>
+	    </ul>
+        
+    </body>
+</html>

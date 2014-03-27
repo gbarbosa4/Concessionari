@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Concessionari app</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="{{STATIC_URL}}css/styles.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div class="container">
+	<div class="logo">
+		<h1>Concessionari</h1>
+		<h3>Guillem Barbosa, Joan Marc Capell and Denis Casajus</h3>	
+	</div>
+    {% ifequal main "true" %}
+	    <div class="menu">
+		    <ul>
+			    <li><a href="/cars_page">Cars</a></li>
+			    <li><a href="/factory_page">Factory</a></li>
+			    <li><a href="/user">Usuari</a></li>
+			    <li><a href="/comercials_page">Comercials</a></li>
+                <li><a href="/clients_page">Clients</a></li>
+                <li><a href="/Log_Out">Log_Out</a></li>
+		    </ul>
+	    </div><div class="inner_copy"></div>
+    {% endifequal %}
+	<div class="bodyContent">
+		 <h1>{{ pagetitle }}</h1>
+        <p>{{ contentbody }}</p>
+        {% if user.username %}
+            <p>Benvingut {{ user.username }}!
+                Aquí podrà Realitzar reserves i compres!</p>
+        {% else %}
+        <p>Benvingut Anònim:
+        Obligatori fer <a href="/login/">sign in</a>
+        per gestionar compres.</p>
+        {% endif %}
+	</div>
+<div id="footer">
+	<div class="fcenter">
+		
+	</div>
+</div>
+</div>
+</body>
+</html>

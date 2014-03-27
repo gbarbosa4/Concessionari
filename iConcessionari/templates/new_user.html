@@ -1,0 +1,25 @@
+
+<html>
+<head>
+<title>Concessionari app</title>
+</head>
+<body>
+
+	<h1>Concessionari</h1>
+
+	<h2>User Login</h2>
+    {% if form.has_errors %}
+        <p>Error validant usuari.</p>
+    {% endif %}
+    <form id='formulario' method='post' action=''> {% csrf_token %}
+        <table>{{formulario}}</table>
+        <input type="hidden" name="next" value="/mainpage" />
+        <input type="submit" value="Save" />
+        
+    </form>
+
+    
+	
+
+</body>
+</html>
