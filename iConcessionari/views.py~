@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect
 from django.template import Context
 from django.template.loader import get_template
 from django.contrib.auth.models import User
-from iConcessionari.models import Car,Factory,Client
+from iConcessionari.models import Car, Factory, Client
 from django.core import serializers
 
 from django.contrib.auth.forms import UserCreationForm
@@ -16,7 +16,8 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 from django.template import RequestContext, loader
 from django.contrib.auth.decorators import login_required
-from forms import  UserCreateForm
+
+from forms import  UserCreateForm, UserForm, FactoryForm
 
 from django.shortcuts import render_to_response, get_object_or_404
 from django.core import urlresolvers
@@ -25,7 +26,10 @@ from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserChangeForm
 
-from forms import UserForm
+from django.views.generic import DetailView
+from django.views.generic.edit import CreateView
+
+ 
 
 @login_required
 def editar_perfil(request):
@@ -56,6 +60,8 @@ def new_user(request):
     else:
         formulario = UserCreateForm()
     return render_to_response('new_user.html',{'formulario':formulario},context_instance=RequestContext(request))
+
+
 
 def save(request,formulario):
     print formulario.user
@@ -178,6 +184,39 @@ def comercials_page(request):
     })
     output = template.render(variables)
     return HttpResponse(output)
+
+
+
+#Creates new registers
+class FactoryCreate(CreateView):
+    model = Factory
+    template_name = 'form.html'
+    form_class = FactoryForm
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(FactoryCreate, self).form_valid(form)
+
+class ClientCreate(CreateView):
+    model = Client
+    template_name = 'form.html'
+    form_class = ClientForm
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(ClientCreate, self).form_valid(form)
+
+class CarCreate(CreateView):
+    model = Car
+    template_name = 'form.html'
+    form_class = CarForm
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(CarCreate, self).form_valid(form)
+
+
+
 
 #json i xml
 

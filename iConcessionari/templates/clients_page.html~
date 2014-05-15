@@ -21,11 +21,13 @@
         <h3>Clients a la base de dades</h3>
         {% if clients %}
         {% for client in clients %}
-        <li> <a href="/factory_page/{{client.id}}"> {{client.last_name}}, {{client.name}} </a></li>
+        <li> <a href="/clients_page/{{client.id}}"> {{client.last_name}}, {{client.name}} </a></li>
         
         {% endfor %}
         {% else %}
-            <p> No hi ha cap fabrica </p>
+            <p> No hi ha cap client </p>
         {% endif %}
+
+        <a href="/clients_page/create">Create new factory</a>
     </body>
 </html>

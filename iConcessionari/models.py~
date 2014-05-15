@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
+
 # Create your models here.
 
 
@@ -13,6 +15,8 @@ class Factory(models.Model):
     stock = models.IntegerField()
     def __unicode__(self):
         return self.city+" - "+self.address+" - "+str(self.production)+" - "+str(self.stock)
+    def get_absolute_url(self):
+        return reverse('factory_page')
 
 #class Comercial(models.Model):
     #user = models.OneToOneField(User)
@@ -28,7 +32,7 @@ class Factory(models.Model):
 class Client(models.Model):
     name = models.TextField(max_length=20)
     last_name = models.TextField(max_length=20)
-    email = models.EmailField(required=True)
+    email = models.TextField(max_length=20)
     dni = models.TextField(max_length=9)
     telephone = models.IntegerField()
     city = models.TextField(max_length=100)

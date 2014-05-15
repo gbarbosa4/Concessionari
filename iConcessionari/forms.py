@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from models import Client
+from models import Client,Factory,Car
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import UserChangeForm
@@ -20,10 +20,26 @@ class UserCreateForm(UserCreationForm):
             user.save()
         return user
 
+
 class UserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ("username", "email", "password","first_name","last_name")
 
-        
+
+class FactoryForm(ModelForm):
+    class Meta:
+        model = Factory
+
+class ClientForm(ModelForm):
+    class Meta:
+        model = Client
+
+class CarForm(ModelForm):
+    class Meta:
+        model = Car
+
+
+
+
 

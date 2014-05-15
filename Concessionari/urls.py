@@ -13,6 +13,18 @@ urlpatterns = patterns('',
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
+    #Create new registers
+    #url(r'^clients_page/create/$',clients_page),
+    #url(r'^cars_page/create/$',cars_page),
+
+    url(r'^factory_page/create/$',FactoryCreate.as_view()),
+    url(r'^cars_page/create/$',CarCreate.as_view()),
+    url(r'^clients_page/create/$',ClientCreate.as_view()),
+
+    #url(r'^factory_page/update/$',FactoryCreate.as_view()),
+    #url(r'^cars_page/update/$',CarCreate.as_view()),
+    #url(r'^clients_page/update/$',ClientCreate.as_view()),
+
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', new_page, name='home'),
@@ -21,16 +33,21 @@ urlpatterns = patterns('',
     url(r'^user/$', userpage),
     url(r'^user/edit$', editar_perfil),
     url(r'^login/$','django.contrib.auth.views.login'),
-    url(r'^clients_page/$',clients_page),
+    url(r'^clients_page/$',clients_page,name='clients_page'),
     url(r'^clients_page/(\w+)/$',client_page_info),
-    url(r'^cars_page/$',cars_page),
+    url(r'^cars_page/$',cars_page,name='cars_page'),
     url(r'^cars_page/(\w+)/$',car_info),
-    url(r'^factory_page/$',factory_page),
+    url(r'^factory_page/$',factory_page,name='factory_page'),
     url(r'^factory_page/(\w+)/$',factory_info),
     url(r'^Log_Out/$',new_page),
     url(r'^comercials_page/$',comercials_page),
     url(r'^registration/$',new_user),
 
+    
+
+
+
+    #JSON and XML
     url(r'^(\w+)/user/$', jx_userpage),
     url(r'^clients_page/$',jx_clients_page),
     url(r'^clients_page/(\w+)/$',jx_client_info),

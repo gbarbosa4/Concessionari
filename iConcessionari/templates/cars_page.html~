@@ -13,6 +13,7 @@
 			    <li><a href="/factory_page">Factory</a></li>
 			    <li><a href="/user">Usuari</a></li>
 			    <li><a href="/comercials_page">Comercials</a></li>
+                <li><a href="/clients_page">Clients</a></li>
                 <li><a href="/Log_Out">Log_Out</a></li>
 		    </ul>
 	    </div><div class="inner_copy"></div>
@@ -26,5 +27,7 @@
         {% else %}
             <p> No hi ha cap cotxe </p>
         {% endif %}
+
+        <a href="/cars_page/create">Create new factory</a>
     </body>
 </html>

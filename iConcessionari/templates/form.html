@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Concessionari app</title>
+</head>
+<body>
+    
+    <h1>Factory create</h1>
+
+    {% block content %}
+    <form method="post" action="">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit" href="/factory_page"/>
+    </form>
+    {% endblock %}
+
+</body>
+</html>
