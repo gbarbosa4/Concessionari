@@ -21,7 +21,7 @@
         {% if comercials %}
 
             {% for comercial in comercials %}
-            <li>  {{comercial.user.first_name}} : {{comercial.telephone}} - {{comercial.city}} </li>
+            <li>  Nom: {{comercial.first_name}} - Cognom: {{comercial.last_name}} - Email: {{comercial.email}} </li>
             {% endfor %}
 
         {% else %}

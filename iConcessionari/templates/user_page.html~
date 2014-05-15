@@ -1,9 +1,9 @@
 <html>
     <head>
-        <title>{{ titlehead }}</title>
+        <title>{{ user.username }}</title>
     </head>
-
     <body>
+        
         <h1>Conessionari</h1>
         <h3>Menu</h3>
         <div class="menu">
@@ -17,14 +17,13 @@
 		    </ul>
 	    </div><div class="inner_copy"></div>
 
-        <h3>Cotxes en stock</h3>
-        {% if cars %}
-        {% for car in cars %}
-        <li> <a href="/cars_page/{{car.id}}"> {{car.brand}}</a></li>
+        <h3>Info of {{ user.username }}</h3>
+        <form action="" method="post">
+            <table>{{ user_form }}</table>
+            <input type="submit" value="Guardar cambios">
+            {% csrf_token %}
+        </form>
+
         
-        {% endfor %}
-        {% else %}
-            <p> No hi ha cap cotxe </p>
-        {% endif %}
     </body>
 </html>

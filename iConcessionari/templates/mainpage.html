@@ -20,6 +20,7 @@
 			    <li><a href="/factory_page">Factory</a></li>
 			    <li><a href="/user">Usuari</a></li>
 			    <li><a href="/comercials_page">Comercials</a></li>
+                <li><a href="/clients_page">Clients</a></li>
                 <li><a href="/Log_Out">Log_Out</a></li>
 		    </ul>
 	    </div><div class="inner_copy"></div>
@@ -31,7 +32,7 @@
             <p>Benvingut {{ user.username }}!
                 Aquí podrà Realitzar reserves i compres!</p>
         {% else %}
-        <p>Benvingut no ningú:
+        <p>Benvingut Anònim:
         Obligatori fer <a href="/login/">sign in</a>
         per gestionar compres.</p>
         {% endif %}

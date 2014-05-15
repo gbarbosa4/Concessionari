@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>{{ titlehead }}</title>
+        <title>Info of {{ client.id }}</title>
     </head>
 
     <body>
@@ -18,16 +18,15 @@
 		    </ul>
 	    </div><div class="inner_copy"></div>
 
-        <h3>Comercials disponibles</h3>
-        {% if comercials %}
-
-            {% for comercial in comercials %}
-            <li>  Nom: {{comercial.first_name}} - Cognom: {{comercial.last_name}} - Email: {{comercial.email}} </li>
-            {% endfor %}
-
-        {% else %}
-            <p> No hi ha cap Comercial </p>
-            
-        {% endif %}
+        <h3>Info of {{ client.name }} - {{ client.id }}</h3>
+        <ul>
+                <li>Nom: {{ client.name }}</li>
+                <li>Cognom: {{ client.last_name }}</li>
+                <li>email: {{ client.email }}</li>
+                <li>DNI: {{ client.dni }}</li>
+                <li>Ciutat: {{ client.city }}</li>
+                <li>Adreça: {{ client.address }}</li>
+			    <li>Telefon: {{ client.telephone }}</li>
+	    </ul>
     </body>
 </html>
