@@ -5,8 +5,6 @@ from models import Factory, Client, Car
 
 class FactorySerializer(HyperlinkedModelSerializer):
     url = HyperlinkedIdentityField(view_name='factory-detail')
-    client = HyperlinkedRelatedField(many=True, read_only=True, view_name='client-detail')
-    car = HyperlinkedRelatedField(many=True, read_only=True, view_name='car-detail')
     user = CharField(read_only=True)
     class Meta:
         model = Factory
@@ -14,8 +12,6 @@ class FactorySerializer(HyperlinkedModelSerializer):
 
 class ClientSerializer(HyperlinkedModelSerializer):
     url = HyperlinkedIdentityField(view_name='client-detail')
-    car = HyperlinkedRelatedField(many=True, read_only=True, view_name='car-detail')
-    factory = HyperlinkedRelatedField(view_name='factory-detail')
     user = CharField(read_only=True)
     class Meta:
         model = Client
@@ -24,7 +20,7 @@ class ClientSerializer(HyperlinkedModelSerializer):
 class CarSerializer(HyperlinkedModelSerializer):
     url = HyperlinkedIdentityField(view_name='car-detail')
     factory = HyperlinkedRelatedField(view_name='factory-detail')
-    client = HyperlinkedRelatedField(many=True, read_only=True, view_name='client-detail')
+    client = HyperlinkedRelatedField(view_name='client-detail')
     user = CharField(read_only=True)
     class Meta:
         model = Car
