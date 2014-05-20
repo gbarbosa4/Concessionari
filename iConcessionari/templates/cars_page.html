@@ -17,17 +17,21 @@
                 <li><a href="/Log_Out">Log_Out</a></li>
 		    </ul>
 	    </div><div class="inner_copy"></div>
-
-        <h3>Cotxes en stock</h3>
+        <table>
         {% if cars %}
         {% for car in cars %}
-        <li> <a href="/cars_page/{{car.id}}"> {{car.brand}}</a></li>
-        
+            <tr>
+              <td><a href="/cars_page/{{car.id}}"> {{car.brand}}</a> </td>
+              <td><form action="{% url "Car_edit" pk=car.id %}"><input type="submit" value="UPDATE"></form></td>
+              <td><form action="{% url "Car_delete" pk=car.id %}"><input type="submit" value="DELETE"></form></td>
+            </tr>
         {% endfor %}
         {% else %}
             <p> No hi ha cap cotxe </p>
         {% endif %}
+        <table>
 
-        <a href="/cars_page/create">Create new Car</a>
+        <form action="/cars_page/create"><input type="submit" value="Create new Car"></form>
+
     </body>
 </html>

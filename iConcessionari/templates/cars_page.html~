@@ -28,6 +28,6 @@
             <p> No hi ha cap cotxe </p>
         {% endif %}
 
-        <a href="/cars_page/create">Create new factory</a>
+        <a href="/cars_page/create">Create new Car</a>
     </body>
 </html>

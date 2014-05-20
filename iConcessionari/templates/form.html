@@ -1,20 +1,76 @@
 <html>
 <head>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/ui-darkness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-2.1.1.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://api.geonames.org/export/geonamesData.js?username=demo"></script>
+    
 <title>Concessionari app</title>
 </head>
 <body>
+    {% load staticfiles %}
+    <h1>New register</h1>
     
-    <h1>Factory create</h1>
-
     {% block content %}
     <form method="post" action="">
         {% csrf_token %}
         <table>
             {{ form.as_table }}
+
         </table>
         <input type="submit" value="Submit" href="/factory_page"/>
     </form>
     {% endblock %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.getJSON("{% static "countries.json" %}", {}, function (countries) {
+            $('#id_country').autocomplete({
+                source: function (request, response) {
+                    var matches = $.map(countries, function (acItem) {
+                        if (acItem.toUpperCase().indexOf(request.term.toUpperCase()) === 0) {
+                            return acItem;
+                        }
+                    });
+                    response(matches);
+                }
+            });
+            });
+        $("#id_city").autocomplete({
+                source: function( request, response ) {
+                    $.ajax({
+                        url: "http://api.geonames.org/searchJSON",
+                        dataType: "jsonp",
+                        data: {
+                            featureClass: "P",
+                            maxRows: 100,
+                            name_startsWith: request.term,
+                            username: "capel93"
+                        },
+                        success: function( data ) {
+                            response( $.map( data.geonames, function( item ) {
+                                d= {
+                                    label: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName,
+                                    value: item.name,
+                                    countryName: item.countryName
+                                }
+                                if(d.countryName==$("#id_country").val()){
+                                    return d.value;
+                                }
+                            }));
+                        }
+                    });
+                },
+                minLength: 2,
+                select: function( event, ui ) {
+                    if (ui.item) {
+                        $("#id_country").val($("#id_country").val());
 
+                    }
+                }
+            });
+        });
+    </script>
+
+    
 </body>
 </html>

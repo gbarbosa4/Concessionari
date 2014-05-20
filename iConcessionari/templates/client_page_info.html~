@@ -22,6 +22,8 @@
         <ul>
                 <li>Nom: {{ client.name }}</li>
                 <li>Cognom: {{ client.last_name }}</li>
+                <li>email: {{ client.email }}</li>
+                <li>DNI: {{ client.dni }}</li>
                 <li>Ciutat: {{ client.city }}</li>
                 <li>Adreça: {{ client.address }}</li>
 			    <li>Telefon: {{ client.telephone }}</li>

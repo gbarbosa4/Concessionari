@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>{{ titlehead }}</title>
+    </head>
+
+    <body>
+      {% block content %}
+
+        <h1>Delete Contact</h1>
+
+        <p>Are you sure you want to delete the contact {{ factory.id }}?</p>
+
+        <form action="{% url "Factory_delete" pk=factory.id %}" method="POST">
+          {% csrf_token %}
+
+          <input type="submit" value="Yes, delete." />
+          <a href="{% url 'factory_page' %}">No, cancel.</a>
+        </form>
+        {% endblock %}
+    </body>
+</html>

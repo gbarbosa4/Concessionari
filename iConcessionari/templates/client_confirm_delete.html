@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>{{ titlehead }}</title>
+    </head>
+
+    <body>
+      {% block content %}
+
+        <h1>Delete Client</h1>
+
+        <p>Are you sure you want to delete the client {{ client.id }}?</p>
+
+        <form action="{% url "Client_delete" pk=client.id %}" method="POST">
+          {% csrf_token %}
+
+          <input type="submit" value="Yes, delete." />
+
+        </form>
+        <form action="{% url 'clients_page' %}"><input type="submit" value="No, cancel."></form>
+        {% endblock %}
+    </body>
+</html>

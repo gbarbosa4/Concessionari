@@ -18,7 +18,7 @@
 		    </ul>
 	    </div><div class="inner_copy"></div>
 
-        <h3>Info of {{ factory.id }}</h3>
+        <h3>Info of Factory {{ factory.id }}</h3>
         <ul>
                 <li>Telefon: {{ factory.city }}</li>
                 <li>Adreça: {{ factory.address }}</li>

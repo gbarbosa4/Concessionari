@@ -20,10 +20,15 @@ urlpatterns = patterns('',
     url(r'^factory_page/create/$',FactoryCreate.as_view()),
     url(r'^cars_page/create/$',CarCreate.as_view()),
     url(r'^clients_page/create/$',ClientCreate.as_view()),
+    
+    url(r'^factory_page/update/(?P<pk>\d+)/$',UpdateFactoryView.as_view(),name='Factory_edit'),
+    url(r'^cars_page/update/(?P<pk>\d+)/$',UpdateCarView.as_view(),name='Car_edit'),
+    url(r'^clients_page/update/(?P<pk>\d+)/$',UpdateClientView.as_view(),name='Client_edit'),
 
-    #url(r'^factory_page/update/$',FactoryCreate.as_view()),
-    #url(r'^cars_page/update/$',CarCreate.as_view()),
-    #url(r'^clients_page/update/$',ClientCreate.as_view()),
+
+    url(r'^factory_page/delete/(?P<pk>\d+)/$',DeleteFactoryView.as_view(),name='Factory_delete'),
+    url(r'^cars_page/delete/(?P<pk>\d+)/$',DeleteCarView.as_view(),name='Car_delete'),
+    url(r'^clients_page/delete/(?P<pk>\d+)/$',DeleteClientView.as_view(),name='Client_delete'),
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),

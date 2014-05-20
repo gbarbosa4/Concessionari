@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>{{ titlehead }}</title>
+    </head>
+
+    <body>
+      {% block content %}
+
+        <h1>Delete Car</h1>
+
+        <p>Are you sure you want to delete the car {{ car.id }}?</p>
+
+        <form action="" method="POST">
+          {% csrf_token %}
+
+          <input type="submit" value="Yes, delete." href="{% url "Car_delete" pk=car.id %}"/>
+          <input type="submit" value="No, cancel." href="{% url 'cars_page' %}"/>
+        </form>
+        {% endblock %}
+    </body>
+</html>

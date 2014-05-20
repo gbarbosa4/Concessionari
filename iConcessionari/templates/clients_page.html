@@ -19,15 +19,20 @@
 	    </div><div class="inner_copy"></div>
 
         <h3>Clients a la base de dades</h3>
+        <table>
         {% if clients %}
         {% for client in clients %}
-        <li> <a href="/clients_page/{{client.id}}"> {{client.last_name}}, {{client.name}} </a></li>
-        
+            <tr>
+              <td><a href="/clients_page/{{client.id}}"> {{client.last_name}}, {{client.name}} </a> </td>
+              <td><form action="{% url "Client_edit" pk=client.id %}"><input type="submit" value="UPDATE"></form></td>
+              <td><form action="{% url "Client_delete" pk=client.id %}"><input type="submit" value="DELETE"></form></td>
+            </tr>
         {% endfor %}
         {% else %}
             <p> No hi ha cap client </p>
         {% endif %}
+        <table>
 
-        <a href="/clients_page/create">Create new Client</a>
+        <form action="/clients_page/create"><input type="submit" value="Create new Client"></form>
     </body>
 </html>

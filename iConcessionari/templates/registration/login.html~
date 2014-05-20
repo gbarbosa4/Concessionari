@@ -19,7 +19,7 @@
         <input type="submit" value="login" />
         {% csrf_token %}
     </form>
-    <a href="/registration">Registre per invitats</a>
+    <a href="/registration">Registra't</a>
 
 
 </body>

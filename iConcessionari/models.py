@@ -8,9 +8,11 @@ from django.core.urlresolvers import reverse
 
 
 class Factory(models.Model):
-    city = models.TextField(max_length=100)
-    address = models.TextField(max_length=100)
-    telephone = models.IntegerField()
+    name = models.CharField(max_length=20)
+    country = models.CharField(max_length=20)
+    city = models.CharField(max_length=20)
+    address = models.CharField(max_length=20)
+    telephone = models.IntegerField(max_length=9)
     production = models.IntegerField()
     stock = models.IntegerField()
     def __unicode__(self):
@@ -30,13 +32,14 @@ class Factory(models.Model):
      #   return self.city+" - "+self.address+" - "+self.dni
 
 class Client(models.Model):
-    name = models.TextField(max_length=20)
-    last_name = models.TextField(max_length=20)
-    email = models.TextField(max_length=20)
-    dni = models.TextField(max_length=9)
-    telephone = models.IntegerField()
-    city = models.TextField(max_length=100)
-    address = models.TextField(max_length=100)
+    name = models.CharField(max_length=20)
+    last_name = models.CharField(max_length=20)
+    email = models.CharField(max_length=20)
+    dni = models.CharField(max_length=9)
+    telephone = models.IntegerField(max_length=9)
+    country = models.CharField(max_length=20)
+    city = models.CharField(max_length=20)
+    address = models.CharField(max_length=20)
     def __unicode__(self):
         return self.city+" - "+self.address+" - "+self.dni
     def get_absolute_url(self):
@@ -44,8 +47,8 @@ class Client(models.Model):
 
 
 class Car(models.Model):
-    brand = models.TextField(max_length=30)
-    model = models.TextField(max_length=30)
+    brand = models.CharField(max_length=20)
+    model = models.CharField(max_length=20)
     price = models.IntegerField()
     client = models.ForeignKey(Client)
     factory = models.ForeignKey(Factory)

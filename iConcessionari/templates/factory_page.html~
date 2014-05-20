@@ -19,13 +19,22 @@
 	    </div><div class="inner_copy"></div>
 
         <h3>Fabriques en funcionament</h3>
+        <table>
         {% if factories %}
         {% for factory in factories %}
-        <li> <a href="/factory_page/{{factory.id}}"> {{factory.address}} </a></li>
+            <tr>
+              <td><a href="/factory_page/{{factory.id}}"> {{factory.address}} </a> </td>
+              <td><form action="{% url "Factory_edit" pk=factory.id %}"><input type="submit" value="UPDATE"></form></td>
+              <td><form action="{% url "Factory_delete" pk=factory.id %}"><input type="submit" value="DELETE"></form></td>
+            </tr>
+ 
         
         {% endfor %}
         {% else %}
             <p> No hi ha cap fabrica </p>
         {% endif %}
+        </table>
+        <a href="/factory_page/create">Create new factory</a>
+        
     </body>
 </html>
