@@ -30,6 +30,13 @@ from django.views.generic import DetailView
 from django.views.generic.edit import CreateView,DeleteView,UpdateView
 from django.core.urlresolvers import reverse
 
+from rest_framework import generics
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.reverse import reverse
+from models import Factory, Client, Car
+#from forms import UserCreateForm, UserForm
+from serializers import FactorySerializer, ClientSerializer, CarSerializer
  
 
 @login_required
@@ -323,6 +330,39 @@ def jx_comercials_page(request,jx):
     data = serializers.serialize(jx, User.objects.all())
     return HttpResponse(data,mimetype="application/"+jx)
 
+
+#APIs
+
+
+class APIFactoryList(generics.ListCreateAPIView):
+    
+    model = Factory
+    serializer_class = FactorySerializer
+
+class APIFactoryDetail(generics.RetrieveUpdateDestroyAPIView):
+    
+    model = Factory
+    serializer_class = FactorySerializer
+
+class APIClientList(generics.ListCreateAPIView):
+  
+    model = Client
+    serializer_class = ClientSerializer
+
+class APIClientDetail(generics.RetrieveUpdateDestroyAPIView):
+   
+    model = Client
+    serializer_class = ClientSerializer
+
+class APICarList(generics.ListCreateAPIView):
+   
+    model = Car
+    serializer_class = CarSerializer
+
+class APICarDetail(generics.RetrieveUpdateDestroyAPIView):
+  
+    model = Car
+    serializer_class = CarSerializer
 
 
 

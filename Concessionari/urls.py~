@@ -3,6 +3,7 @@ from iConcessionari.views import *
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 from django.conf import settings
+from views import APIFactoryDetail, APIFactoryList, APIClientDetail,APIClientList,APICarDetail, APICarList
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -61,5 +62,16 @@ urlpatterns = patterns('',
     url(r'^(\w+)/factory_page/$',jx_factory_page),
     url(r'^(\w+)/factory_page/(\w+)/$',jx_factory_info),
     url(r'^(\w+)/comercials_page/$',jx_comercials_page),
+
+    #APIs
+    url(r'^api/factory/$', APIFactoryList.as_view(), name='factory-list'),
+    url(r'^api/factory/(?P<pk>\d+)/$', APIFactoryDetail.as_view(), name='factory-detail'),
+    url(r'^api/client/$', login_required(APIClientList.as_view()), name='client-list'),
+    url(r'^api/client/(?P<pk>\d+)/$', APIClientDetail.as_view(), name='client-detail'),
+    url(r'^api/car/$', APICarList.as_view(), name='car-list'),
+    url(r'^api/car/(?P<pk>\d+)/$', APICarDetail.as_view(), name='car-detail'),
+
+
+
 
 )
